@@ -2,8 +2,8 @@
 
 class Contact{
 	public:
-		~Contact();
-		Contact();
+		~Contact(void);
+		Contact(void);
 
 		void	setName(std::string);
 		void	setNick(std::string nickname);

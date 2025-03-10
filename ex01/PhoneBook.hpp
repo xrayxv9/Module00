@@ -6,15 +6,16 @@
 class PhoneBook
 {
 	public :
-		PhoneBook();
-		~PhoneBook();
+		PhoneBook(void);
+		~PhoneBook(void);
 		
-	private:
-		int			id = 0;
-
+		void	add_contact();
 		Contact contacts[8];
 
-		void	add_contact();
+	private:
+		int			id;
+
+
 };
 
 #endif

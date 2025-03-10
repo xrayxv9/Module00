@@ -1,4 +1,4 @@
-NAME = megaphone
+NAME = PhoneBook
 
 CC = c++
 FLAGS = -Wall -Werror -Wextra -std=c++98
@@ -9,7 +9,7 @@ YELLOW = \033[33m
 BLUE = \033[38;2;15;101;214m
 RESET = \033[0m
 
-SRC = main.cpp
+SRC = main.cpp Contacts.cpp PhoneBook.cpp
 
 OBJS_SRC = $(SRC:.c=.o)
 

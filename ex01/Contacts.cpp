@@ -1,5 +1,15 @@
 #include "Contacts.hpp"
 
+Contact::Contact(void)
+{
+	return;
+}
+
+Contact::~Contact(void)
+{
+	return;
+}
+
 void Contact::setName(std::string name)
 {
 	Contact::firstName = name;
