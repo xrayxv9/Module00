@@ -1,21 +1,31 @@
 #include <string>
-#include <iostream>
-
 
 class Contact{
 	public:
 		~Contact();
 		Contact();
 
-		void	setname(std::string);
-		void	setnick(std::string nickname);
-		void	setlastname(std::string lastname);
+		void	setName(std::string);
+		void	setNick(std::string nickname);
+		void	setLastName(std::string lastname);
+		void	setDarkestSecret(std::string darkestSecret);
+		void	setPhoneNumber(std::string phoneNumber);
+		void	setId(int id);
+
+		std::string getName();
+		std::string getDarkestSecret();
+		std::string getNick();
+		std::string getLastName();
+		std::string getPhoneNumber();
+		int			getId();
+
 
 	private:
-		std::string FirstName;
+		std::string firstName;
 		std::string nickname;
 		std::string lastName;
 		std::string darkestSecret;
-		std::string PhoneNumber;
+		std::string phoneNumber;
+		int			id;
 };
 
