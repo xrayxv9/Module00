@@ -2,7 +2,12 @@
 
 Contact::Contact(void)
 {
-	return;
+	infos[0] = Contact::firstName;
+	infos[1] = Contact::lastName;
+	infos[2] = Contact::nickname;
+	infos[3] = Contact::phoneNumber;
+	infos[4] = Contact::darkestSecret;
+	id = 0;
 }
 
 Contact::~Contact(void)
@@ -13,6 +18,11 @@ Contact::~Contact(void)
 void Contact::setName(std::string name)
 {
 	Contact::firstName = name;
+}
+
+void Contact::setId(int id)
+{
+	Contact::id = id;
 }
 
 void Contact::setNick(std::string nickname)
@@ -35,38 +45,33 @@ void Contact::setPhoneNumber(std::string phone)
 	Contact::phoneNumber = phone;
 }
 
-void Contact::setId(int id)
-{
-	Contact::id = id;
-}
-
 // get infos 
 std::string Contact::getName()
 {
-	return(Contact::firstName);
-}
-
-std::string Contact::getNick()
-{
-	return(Contact::nickname);
+	return(infos[0]);
 }
 
 std::string Contact::getLastName()
 {
-	return(Contact::lastName);
+	return(infos[1]);
 }
 
-std::string Contact::getDarkestSecret()
+std::string Contact::getNick()
 {
-	return(Contact::darkestSecret);
+	return(infos[2]);
 }
 
 std::string Contact::getPhoneNumber()
 {
-	return(Contact::phoneNumber);
+	return(infos[3]);
+}
+
+std::string Contact::getDarkestSecret()
+{
+	return(infos[4]);
 }
 
 int Contact::getId()
 {
-	return(Contact::id);
+	return(id);
 }

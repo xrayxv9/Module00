@@ -9,11 +9,15 @@ class PhoneBook
 		PhoneBook(void);
 		~PhoneBook(void);
 		
-		void	add_contact();
-		Contact contacts[8];
+		void	addContact(void);
+		void	showContacts(void);
+		void	showContact(int toShow);
 
 	private:
 		int			id;
+		bool		full;
+		Contact contacts[8];
+		std::string questions[5];
 
 
 };

@@ -5,6 +5,8 @@ class Contact{
 		~Contact(void);
 		Contact(void);
 
+		std::string infos[6];
+
 		void	setName(std::string);
 		void	setNick(std::string nickname);
 		void	setLastName(std::string lastname);
