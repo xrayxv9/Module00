@@ -1,4 +1,5 @@
 #include "PhoneBook.hpp"
+#include <cctype>
 #include <iomanip>
 #include <iostream>
 #include <string>
@@ -112,25 +113,32 @@ void	PhoneBook::showContacts(void)
 	for (int i = 0; i < length; i++)
 		showContact(i);
 	showBot();
-	std::cout << "Which one do you want to see ?" << std::endl;
+	std::cout << "Which one do you want to see ? 👀" << std::endl;
 	std::getline(std::cin, tmp);
 	if (std::cin.eof())
 		return ;
 	if (tmp.empty())
 	{
-		if (id > 0 || full)
-			nbr = 0;
-		else
+		std::cout << "Give me something 🤤" << std::endl;
+		return ;
+	}
+	for (int i = 0; tmp[i]; i++)
+	{
+		if (!std::isdigit(tmp[i]))
 		{
-			std::cout << "please at least init the first value before entering an empty line" << std::endl;
+			std::cout << "Give me only numbers 🥺👉👈" << std::endl;
+			return ;
+		}
+		else if (i > 10)
+		{
+			std::cout << "🤤 It is too big to handle 🥵 (The number)" << std::endl;
 			return ;
 		}
 	}
-	else
-		nbr = std::atoi(tmp.c_str());
+	nbr = std::atol(tmp.c_str());
 	if ((nbr >= id && !full) || (nbr > 7 && full))
 	{
-		std::cout << "The number isn't in the tab" << std::endl;
+		std::cout << "The number isn't in the tab 🤦" << std::endl;
 		return ;
 	}
 	std::cout << "here is the number : " << id << std::endl;
