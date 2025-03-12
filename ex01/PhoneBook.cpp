@@ -22,12 +22,24 @@ PhoneBook::~PhoneBook(void)
 
 int	checkNumbers(std::string tmp)
 {
-	int count = 0;
-	// I should check if the number is good or not
+	int space_count = 0;
+	int j;
+
 	for (int i = 0; tmp[i]; i++)
 	{
-		if ()
+		if (tmp[i] == ' ')
+			space_count++;
+		else if (tmp[i] != ' ' && (tmp[i] < '0' || tmp[i] > '9'))
+		{
+			std::cout << "Only numbers and spaces are allowed" << std::endl;
+			return 0;
+		}
+		j = i;
 	}
+	if (j == 9 || (j - space_count == 9))
+		return 1;
+	std::cout << "Too many numbers" << std::endl;
+	return 0;
 }
 
 void	PhoneBook::addContact()
@@ -127,5 +139,4 @@ void	PhoneBook::showContacts(void)
 	std::cout << "the nickname of the person you are searching for is : " << contacts[nbr].getNick() << std::endl;
 	std::cout << "the Phone Number of the person you are searching for is : " << contacts[nbr].getPhoneNumber() << std::endl;
 	std::cout << "the Darkest secret of the person you are searching for is : " << contacts[nbr].getDarkestSecret() << std::endl;
-
 }
