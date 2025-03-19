@@ -38,10 +38,10 @@ void Account::_displayTimestamp( void )
 	std::tm		*now = std::localtime(&t);
 	char		time[80];
 
-	std::strftime(time, 80, "[19920104_091532] ", now);
+	std::strftime(time, 80, "[%Y%m%d_%H%M%S] ", now);
 	std::cout << time;
 }
-//%Y%m%d_%H%M%S
+//19920104_091532
 void Account::displayAccountsInfos( void )
 {
 	_displayTimestamp();
