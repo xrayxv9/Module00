@@ -113,32 +113,32 @@ void	PhoneBook::showContacts(void)
 	for (int i = 0; i < length; i++)
 		showContact(i);
 	showBot();
-	std::cout << "Which one do you want to see ? 👀" << std::endl;
+	std::cout << "Which one do you want to see ?" << std::endl;
 	std::getline(std::cin, tmp);
 	if (std::cin.eof())
 		return ;
 	if (tmp.empty())
 	{
-		std::cout << "Give me something 🤤" << std::endl;
+		std::cout << "Give me something " << std::endl;
 		return ;
 	}
 	for (int i = 0; tmp[i]; i++)
 	{
 		if (!std::isdigit(tmp[i]))
 		{
-			std::cout << "Give me only numbers 🥺👉👈" << std::endl;
+			std::cout << "Give me only numbers " << std::endl;
 			return ;
 		}
 		else if (i > 10)
 		{
-			std::cout << "🤤 It is too big to handle 🥵 (The number)" << std::endl;
+			std::cout << "The number is to big to handle " << std::endl;
 			return ;
 		}
 	}
 	nbr = std::atol(tmp.c_str());
 	if ((nbr >= id && !full) || (nbr > 7 && full))
 	{
-		std::cout << "The number isn't in the tab 🤦" << std::endl;
+		std::cout << "The number isn't in the tab" << std::endl;
 		return ;
 	}
 	std::cout << "here is the number : " << id << std::endl;
