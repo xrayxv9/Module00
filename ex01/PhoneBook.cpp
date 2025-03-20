@@ -14,6 +14,7 @@ PhoneBook::PhoneBook(void)
 	questions[2] = "Do you have a nickname ?";
 	questions[3] = "What's your phone number";
 	questions[4] = "What's your darkest secret ?";
+	std::cout << "coucou les amis" << std::endl;
 }
 
 PhoneBook::~PhoneBook(void)

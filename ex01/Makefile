@@ -11,7 +11,7 @@ RESET = \033[0m
 
 SRC = main.cpp Contacts.cpp PhoneBook.cpp
 
-OBJS_SRC = $(SRC:.c=.o)
+OBJS_SRC = $(SRC:.cpp=.o)
 
 
 all: $(NAME)
@@ -20,15 +20,15 @@ $(NAME): $(OBJS_SRC)
 	@echo ">>> $(BLUE)COMPILATION$(RESET)<<<"
 	@$(CC) $(FLAGS)  $(OBJS_SRC) -o $@
 
-$(OBJ_PATH)%.o: $(SRC)%.c
+$(OBJ_PATH)%.o: $(SRC)%.cpp
 	@$(CC) $(CFLAGS) -c $< -o $@
 
-clean:
+clean: 
 	@echo ">>> $(RED)SUPPRESSION DES FICHIERS .o $(RESET)<<<"
 	@rm -rf $(OBJS_SRC)
 	@echo "$(RESET)"
 
-fclean:
+fclean: clean
 	@echo ">>> $(RED)SUPPRESSION DE L'EXECUTABLE $(RESET)<<<"
 	@rm -f $(NAME)
 
